@@ -53,10 +53,20 @@ public class movielist {
         moviedetails.add(summary);
         mainlist.add(moviedetails); 
         System.out.println("current entered details:"); 
-        for(int i=0;i<moviedetails.size(); i++) {
+        for(int i=2;i<moviedetails.size(); i++) {
             System.out.println(moviedetails.get(i));
         }
-        System.out.println("overall movies list entered:");
+        System.out.println("do you want add another movie details? (y/n)");
+        String input = s.nextLine();
+        if(input.equals("y")){
+            add();
+        }
+        else if(input.equals("n")){
+            System.out.println("thank you!!");
+        }else{
+            System.out.println("please enter either y or n");
+        }
+        System.out.println("All entered details:"); 
         for(int i=0;i<mainlist.size(); i++) {
             System.out.println(mainlist.get(i));
         }
