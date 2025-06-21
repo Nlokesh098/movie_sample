@@ -25,8 +25,27 @@ public class movielist {
     }
 
     public static void delete() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        Scanner s = new Scanner(System.in);
+        int test =0;
+        System.out.println("enter the movie name to delete:");
+        String input = s.nextLine();
+        for(int i=0;i<mainlist.size(); i++){
+            if(mainlist.get(i).get(0).equals(input)){
+                mainlist.remove(i);
+                System.out.println("movie deleted successfully");
+                test =1;
+            }
+            //System.out.println("all movie details:" + mainlist.get(i));
+        }
+        //System.out.println("movie deleted successfully");
+        System.out.println("all movie details:");
+        for(int i=0;i<mainlist.size(); i++){
+            // System.out.println("all movie details:");
+            System.out.println(mainlist.get(i));
+        }
+        if(test == 0){
+            System.out.println("enter correct movie name");
+        }
     }
 
     public static void update() {
@@ -115,14 +134,16 @@ public class movielist {
         for(int i=0;i<mainlist.size(); i++) {
             System.out.println(mainlist.get(i));
         }
-        System.out.println("do want to perform any other operation?? like update or delete \n click 2 to update \n click 3 to delete \n 0 to Exit");
+        System.out.println("do want to perform any other operation?? like update or delete \n click 1 to add again \n click 2 to update \n click 3 to delete \n 0 to Exit");
         //Scanner s = new Scanner(System.in);
         int number =  s.nextInt();
         if(number == 2){
             update();
         }else if(number == 3){
             delete();
-        }else if(number == 0){
+        }else if(number == 1){
+            add();}
+        else if(number == 0){
             System.out.println("thank you!!");
         }
     }
