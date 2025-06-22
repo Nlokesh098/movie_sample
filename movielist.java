@@ -8,6 +8,7 @@ public class movielist {
     static ArrayList<List<String>> mainlist = new ArrayList<>();
         public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
+        System.out.println("git");
 
         System.out.println("What do you like to do here: \n Click 1 to add a movie \n click 2 to update a movie details \n click 3 to remove a movie");
         int input = s.nextInt();
